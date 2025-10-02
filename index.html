@@ -3,274 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doce Lingeries — Moda Íntima Feminina</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Doce — Moda Íntima Feminina</title>
+<link rel="stylesheet" href="style.css">
 <style>
-/* ================= RESET ================= */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
 
-/* ================= HEADER ================= */
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 15px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo { font-size: 1.8rem; font-weight:700; }
-
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-/* MENU */
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  transition: max-height 0.3s ease;
-  overflow: hidden;
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-nav ul li a:hover {
-  background-color: #ff6bcb;
-  color: #fff;
-}
-
-/* BOTÃO CARRINHO */
-#btnCarrinho {
-  background-color: #555;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-  align-self: flex-start;
-  position: relative;
-}
-
-.badge {
-  background-color: #ff9900;
-  color: #fff;
-  border-radius: 50%;
-  padding: 2px 7px;
-  font-size: 0.8rem;
-  position: absolute;
-  top: -5px;
-  right: -10px;
-}
-
-/* ================= HERO ================= */
-.hero {
-  background: url('banner.jpg') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:100px 20px;
-  color:#fff;
-}
-
-.hero-text h1 { font-size:2.5rem; margin-bottom:10px; }
-.hero-text p { font-size:1.2rem; margin-bottom:20px; }
-.hero-text .btn {
-  background-color:#333;
-  color:#fff;
-  padding:12px 25px;
-  border-radius:8px;
-  text-decoration:none;
-  transition: background 0.3s;
-}
-
-.hero-text .btn:hover { background-color:#555; }
-
-/* ================= SOBRE ================= */
-.sobre { padding:50px 20px; text-align:center; background:#f5f5f5; }
-.sobre h2 { margin-bottom:30px; color:#333; }
-.sobre-cards {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.sobre-card {
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  flex:1 1 250px;
-}
-
-/* ================= COLEÇÃO ================= */
-.colecao { padding:50px 20px; text-align:center; }
-.colecao h2 { margin-bottom:30px; color:#333; }
-.produtos {
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.produto {
-  background:#fff;
-  padding:15px;
-  border-radius:12px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  flex:1 1 250px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  position:relative;
-}
-
-.produto img { width:100%; border-radius:12px; }
-.produto button.adicionar {
-  margin-top:10px;
-  background:#333;
-  color:#fff;
-  border:none;
-  padding:10px;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-/* ================= CONTATO ================= */
-.contato { padding:50px 20px; text-align:center; }
-.contato h2 { margin-bottom:20px; color:#333; }
-.contato form {
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-  max-width:400px;
-  margin:auto;
-}
-.contato form input, .contato form textarea, .contato form button {
-  width:100%;
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #ddd;
-  font-size:1rem;
-}
-.contato form button {
-  background:#333;
-  color:#fff;
-  border:none;
-  cursor:pointer;
-}
-.contato form button:hover { background:#555; }
-
-/* ================= CARRINHO ================= */
-.carrinho-modal {
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%) scale(0);
-  width:90%;
-  max-width:400px;
-  background:#fff;
-  border-radius:15px;
-  padding:20px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.3);
-  z-index:1000;
-  transition: transform 0.3s ease-in-out;
-  display:flex;
-  flex-direction:column;
-  gap:15px;
-}
-.carrinho-modal.show { transform:translate(-50%, -50%) scale(1); }
-.carrinho-modal h3 { color:#333; }
-.carrinho-modal ul {
-  list-style:none;
-  max-height:250px;
-  overflow-y:auto;
-  padding:0;
-  border-top:1px solid #ddd;
-  border-bottom:1px solid #ddd;
-}
-.carrinho-modal ul li {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 5px;
-  border-bottom:1px solid #eee;
-  color:#333;
-}
-.carrinho-modal ul li:last-child { border-bottom:none; }
-.carrinho-modal button { background:#333; color:#fff; border:none; padding:10px; border-radius:8px; cursor:pointer; }
-.carrinho-modal button:hover { background:#555; }
-
-/* ================= NOTIFICAÇÃO ================= */
-.notificacao {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background-color:#333;
-  color:#fff;
-  padding:12px 20px;
-  border-radius:8px;
-  opacity:0;
-  pointer-events:none;
-  transition: opacity 0.4s ease-in-out;
-}
-.notificacao.show { opacity:1; pointer-events:auto; }
-
-/* ================= RESPONSIVO ================= */
-@media(max-width:768px){
-  .menu-toggle { display:block; }
-  nav ul { 
-    flex-direction: column; 
-    display: none; 
-    width: 100%; 
-    background: #333; 
-    margin-top: 10px; 
-    border-radius:8px; 
-    padding:10px 0;
-  }
-  nav ul.active { display: flex; }
-  nav ul li { text-align:center; }
   
-  #btnCarrinho {
-    margin-top:10px;
-    width:calc(100% - 40px); /* Mantém espaçamento das laterais */
-    align-self:center;
-  }
-  
-  .hero {
-    padding:60px 20px;
-  }
-  .hero-text h1 { font-size:1.8rem; }
-  .hero-text p { font-size:1rem; }
-  .hero-text .btn { width:80%; margin:auto; display:block; }
-}
 
+  
+  
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-top">
-    <div class="logo">Doce Lingeries</div>
-    <div class="menu-toggle">&#9776;</div>
-  </div>
+  <div class="logo">Doce Lingeries</div>
+  <div class="menu-toggle">&#9776;</div>
   <nav>
     <ul>
       <li><a href="index.html">Início</a></li>
@@ -284,7 +31,7 @@ nav ul li a:hover {
   </button>
 </header>
 
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-text">
     <h1>Moda Íntima Feminina</h1>
     <p>Elegância, conforto e sensualidade para você</p>
@@ -292,7 +39,7 @@ nav ul li a:hover {
   </div>
 </section>
 
-<section class="sobre">
+<section class="sobre" id="sobre">
   <h2>Sobre a Doce Girl</h2>
   <div class="sobre-cards">
     <div class="sobre-card">
@@ -301,7 +48,7 @@ nav ul li a:hover {
     </div>
     <div class="sobre-card">
       <h3>Qualidade</h3>
-      <p>Selecionamos materiais premium para garantir durabilidade e conforto diário.</p
+      <p>Selecionamos materiais premium para garantir durabilidade e conforto diário.</p>
     </div>
     <div class="sobre-card">
       <h3>Atendimento</h3>
@@ -317,34 +64,50 @@ nav ul li a:hover {
     <div class="produto" data-preco="120">
       <div class="produto-imagem">
         <img src="sut4.webp" alt="Conjunto 1">
+        <img src="sut3.webp" alt="Conjunto 1" style="display:none">
+        <img src="img1_3.jpg" alt="Conjunto 1" style="display:none">
       </div>
       <h3>Conjunto Elegância</h3>
       <p>R$120,00</p>
       <button class="adicionar">Adicionar ao Carrinho</button>
+      <div class="carrossel-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
     <div class="produto" data-preco="130">
       <div class="produto-imagem">
         <img src="img2_1.jpg" alt="Conjunto 2">
+        <img src="img2_2.jpg" alt="Conjunto 2" style="display:none">
       </div>
       <h3>Conjunto Sensual</h3>
       <p>R$130,00</p>
       <button class="adicionar">Adicionar ao Carrinho</button>
+      <div class="carrossel-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
     <div class="produto" data-preco="140">
       <div class="produto-imagem">
         <img src="img3_1.jpg" alt="Conjunto 3">
+        <img src="img3_2.jpg" alt="Conjunto 3" style="display:none">
       </div>
       <h3>Conjunto Sedução</h3>
       <p>R$140,00</p>
       <button class="adicionar">Adicionar ao Carrinho</button>
+      <div class="carrossel-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
   </div>
 </section>
 
-<section class="contato">
+<section class="contato" id="contato">
   <h2>Contato</h2>
   <form id="formContato">
     <input type="text" placeholder="Seu nome" required>
@@ -354,7 +117,6 @@ nav ul li a:hover {
   </form>
 </section>
 
-<!-- Modal do Carrinho -->
 <div class="carrinho-modal" id="carrinhoModal">
   <h3>Seu Carrinho</h3>
   <ul id="listaCarrinho"></ul>
@@ -362,96 +124,14 @@ nav ul li a:hover {
   <button id="fecharCarrinho">Fechar</button>
 </div>
 
-<!-- Notificação -->
 <div class="notificacao" id="notificacao">Produto adicionado!</div>
 
 <footer>
-  <p>© 2025 Doce Lingeries. Todos os direitos reservados.</p>
+  <p>© 2025 Doce Girl. Todos os direitos reservados.</p>
 </footer>
 
-<!-- ================= JS ================= -->
-<script>
-  // Menu hamburguer
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navUl = document.querySelector('nav ul');
-  menuToggle.addEventListener('click', () => {
-    navUl.classList.toggle('active');
-  });
-
-  // Carrinho
-  const btnCarrinho = document.getElementById('btnCarrinho');
-  const carrinhoModal = document.getElementById('carrinhoModal');
-  const fecharCarrinho = document.getElementById('fecharCarrinho');
-  const listaCarrinho = document.getElementById('listaCarrinho');
-  const adicionarBtns = document.querySelectorAll('.adicionar');
-  const notificacao = document.getElementById('notificacao');
-  const contadorCarrinho = document.getElementById('contadorCarrinho');
-
-  let carrinho = [];
-
-  function atualizarCarrinho() {
-    listaCarrinho.innerHTML = '';
-    carrinho.forEach((item, index) => {
-      const li = document.createElement('li');
-      li.textContent = `${item.nome} - R$${item.preco}`;
-      const remover = document.createElement('button');
-      remover.textContent = 'Remover';
-      remover.addEventListener('click', () => {
-        carrinho.splice(index,1);
-        atualizarCarrinho();
-      });
-      li.appendChild(remover);
-      listaCarrinho.appendChild(li);
-    });
-    contadorCarrinho.textContent = carrinho.length;
-  }
-
-  adicionarBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const produto = btn.parentElement;
-      const nome = produto.querySelector('h3').textContent;
-      const preco = produto.getAttribute('data-preco');
-      carrinho.push({nome, preco});
-      atualizarCarrinho();
-      notificacao.classList.add('show');
-      setTimeout(()=> notificacao.classList.remove('show'),1500);
-    });
-  });
-
-  btnCarrinho.addEventListener('click', ()=> {
-    carrinhoModal.classList.add('show');
-  });
-
-  fecharCarrinho.addEventListener('click', ()=> {
-    carrinhoModal.classList.remove('show');
-  });
-
-  document.getElementById('finalizar').addEventListener('click', ()=> {
-    if(carrinho.length === 0){
-      alert('Seu carrinho está vazio!');
-      return;
-    }
-    let texto = 'Olá, gostaria de comprar:\n';
-    carrinho.forEach(item => { texto += `${item.nome} - R$${item.preco}\n`; });
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(texto)}`, '_blank');
-  });
-
-  // Contato via WhatsApp
-  const formContato = document.getElementById('formContato');
-  formContato.addEventListener('submit', function(e){
-    e.preventDefault();
-    const nome = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const mensagem = this.querySelector('textarea').value;
-    const texto = `Olá, meu nome é ${nome}\nEmail: ${email}\nMensagem: ${mensagem}`;
-    window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(texto)}`, '_blank');
-    this.reset();
-  });
-</script>
-
-
+<script src="script.js"></script>
 </body>
 </html>
-
 
 
