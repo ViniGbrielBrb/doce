@@ -6,6 +6,116 @@
 <title>Doce — Moda Íntima Feminina</title>
 <link rel="stylesheet" href="style.css">
 <style>
+
+  /* ================= HEADER ================= */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo { font-size: 1.8rem; font-weight:700; }
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #ff6bcb;
+  color: #fff;
+}
+
+#btnCarrinho {
+  background-color: #555;
+  color: #fff;
+  border:none;
+  padding:10px 15px;
+  border-radius:8px;
+  cursor:pointer;
+  position:relative;
+}
+
+.badge {
+  background-color:#ff9900;
+  color:#fff;
+  border-radius:50%;
+  padding:2px 7px;
+  font-size:0.8rem;
+  position:absolute;
+  top:-5px;
+  right:-10px;
+}
+
+/* ================= HERO ================= */
+.hero {
+  background: url('banner.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:100px 20px;
+}
+
+.hero-text h1 { font-size:2.5rem; margin-bottom:10px; color:#fff; }
+.hero-text p { font-size:1.2rem; margin-bottom:20px; color:#fff; }
+.hero-text .btn {
+  background-color:#333;
+  color:#fff;
+  padding:12px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  transition: background 0.3s;
+}
+
+.hero-text .btn:hover { background-color:#555; }
+
+/* ================= RESPONSIVO ================= */
+@media(max-width:768px){
+  .menu-toggle { display:block; }
+  nav ul { 
+    flex-direction: column; 
+    display: none; 
+    width: 100%; 
+    background: #333; 
+    margin-top: 10px; 
+    border-radius:8px; 
+    padding:10px 0;
+  }
+  nav ul.active { display: flex; }
+  nav ul li { text-align:center; }
+  
+  #btnCarrinho { margin-top:10px; width:100%; }
+  
+  .hero {
+    padding:60px 20px;
+  }
+  .hero-text h1 { font-size:1.8rem; }
+  .hero-text p { font-size:1rem; }
+  .hero-text .btn { width:80%; margin:auto; display:block; }
+}
+
   
 </style>
 </head>
@@ -129,3 +239,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
