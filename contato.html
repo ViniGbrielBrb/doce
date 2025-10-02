@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contato | Doce Lingeries</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --roxo: #9b59b6;
+    --rosa: #ff6bcb;
+    --azul: #6ec6ff;
+    --gradiente: linear-gradient(135deg, var(--rosa), var(--roxo), var(--azul));
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+
+  body { background:#f9f9f9; display:flex; flex-direction:column; min-height:100vh; }
+
+  header { 
+  background: var(--gradiente); 
+  padding: 15px 20px; 
+}
+
+.header-container { 
+  max-width: 1200px; 
+  margin: auto; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.logo { 
+  color: #fff; 
+  font-weight: 700; 
+  font-size: 1.8rem; 
+}
+
+nav { 
+  display: flex; 
+  gap: 30px; 
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 4px 4px;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #ff6bcb; /* fundo rosa ao passar o mouse */
+  color: #fff; /* texto continua branco */
+}
+
+
+
+  .menu-toggle { display:none; flex-direction:column; cursor:pointer; }
+  .menu-toggle div { width:25px; height:3px; background:#fff; margin:4px 0; }
+
+  main { flex:1; display:flex; justify-content:center; align-items:center; padding:50px 20px; }
+  .contato-container { display:flex; gap:40px; max-width:1100px; width:100%; flex-wrap:wrap; background:#fff; padding:40px; border-radius:20px; box-shadow:0 4px 20px rgba(0,0,0,0.1); }
+
+  .form-container, .mapa-container { flex:1 1 450px; display:flex; flex-direction:column; }
+
+  .contato-container h2 { width:100%; text-align:center; color:var(--roxo); margin-bottom:20px; font-size:2rem; }
+
+  form { display:flex; flex-direction:column; gap:15px; }
+  form input, form textarea, .btn-whatsapp { width:100%; padding:12px; border-radius:10px; border:1px solid #ddd; font-size:1rem; }
+  form textarea { resize:none; height:120px; }
+  .btn-whatsapp { background:var(--gradiente); color:#fff; border:none; font-weight:600; cursor:pointer; transition:0.3s; }
+  .btn-whatsapp:hover { transform:scale(1.05); }
+
+  .mapa-container iframe { width:100%; height:100%; min-height:300px; border:0; border-radius:12px; }
+
+  footer { text-align:center; padding:15px; background: var(--gradiente); color:#fff; }
+
+  @media(max-width:768px){
+    nav { position:absolute; top:65px; right:0; background:var(--gradiente); flex-direction:column; width:200px; padding:20px; display:none; border-radius:0 0 0 10px; }
+    nav.active { display:flex; }
+    .menu-toggle { display:flex; }
+    .contato-container { flex-direction:column; padding:20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">Doce Lingeries</div>
+    <div class="menu-toggle" id="menuToggle"><div></div><div></div><div></div></div>
+    <nav id="menuNav">
+      <a href="index.html">Início</a>
+      <a href="colecao.html">Coleção</a>
+      <a href="doce.html">Doce Lingeries</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="contato-container">
+    <h2>Entre em Contato</h2>
+
+    <div class="form-container">
+      <form id="formContato">
+        <input type="text" id="nome" placeholder="Seu nome" required>
+        <input type="email" id="email" placeholder="Seu e-mail" required>
+        <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn-whatsapp">Entar em Contato</button>
+      </form>
+    </div>
+
+    <div class="mapa-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.574631691911!2d-46.65657168502277!3d-23.585613068331444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7a503a3e7%3A0x2c16b16e0ef5c975!2sAv.%20Paulista%2C%20São%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1617040061993!5m2!1spt-BR!2sbr" 
+        allowfullscreen="" loading="lazy">
+      </iframe>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 Doce Lingeries. Todos os direitos reservados.
+</footer>
+
+<script>
+  // Menu responsivo
+  const menuToggle = document.getElementById('menuToggle');
+  const menuNav = document.getElementById('menuNav');
+  menuToggle.addEventListener('click', ()=>{ menuNav.classList.toggle('active'); });
+
+  // Formulário WhatsApp
+  document.getElementById("formContato").addEventListener("submit", function(e){
+    e.preventDefault();
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+    const texto = `Olá, meu nome é ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+    const url = `https://wa.me/5511999999999?text=${texto}`; // <-- seu número
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>

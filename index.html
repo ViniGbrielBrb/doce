@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Doce — Moda Íntima Feminina</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Doce Lingeries</div>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="colecao.html">Coleção</a></li>
+      <li><a href="doce.html">Doce Lingeries</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+  <button id="btnCarrinho">
+    Carrinho <span id="contadorCarrinho" class="badge">0</span>
+  </button>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <h1>Moda Íntima Feminina</h1>
+    <p>Elegância, conforto e sensualidade para você</p>
+    <a href="#colecao" class="btn">Ver Coleção</a>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <h2>Sobre a Doce Girl</h2>
+  <div class="sobre-cards">
+    <div class="sobre-card">
+      <h3>Elegância</h3>
+      <p>Nossas peças unem conforto e sensualidade, pensadas para a mulher moderna.</p>
+    </div>
+    <div class="sobre-card">
+      <h3>Qualidade</h3>
+      <p>Selecionamos materiais premium para garantir durabilidade e conforto diário.</p>
+    </div>
+    <div class="sobre-card">
+      <h3>Atendimento</h3>
+      <p>Um atendimento dedicado e personalizado para cada cliente.</p>
+    </div>
+  </div>
+</section>
+
+<section class="colecao" id="colecao">
+  <h2>Coleção</h2>
+  <div class="produtos">
+
+    <div class="produto" data-preco="120">
+      <div class="produto-imagem">
+        <img src="sut4.webp" alt="Conjunto 1">
+        <img src="sut3.webp" alt="Conjunto 1" style="display:none">
+        <img src="img1_3.jpg" alt="Conjunto 1" style="display:none">
+      </div>
+      <h3>Conjunto Elegância</h3>
+      <p>R$120,00</p>
+      <button class="adicionar">Adicionar ao Carrinho</button>
+      <div class="carrossel-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="produto" data-preco="130">
+      <div class="produto-imagem">
+        <img src="img2_1.jpg" alt="Conjunto 2">
+        <img src="img2_2.jpg" alt="Conjunto 2" style="display:none">
+      </div>
+      <h3>Conjunto Sensual</h3>
+      <p>R$130,00</p>
+      <button class="adicionar">Adicionar ao Carrinho</button>
+      <div class="carrossel-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="produto" data-preco="140">
+      <div class="produto-imagem">
+        <img src="img3_1.jpg" alt="Conjunto 3">
+        <img src="img3_2.jpg" alt="Conjunto 3" style="display:none">
+      </div>
+      <h3>Conjunto Sedução</h3>
+      <p>R$140,00</p>
+      <button class="adicionar">Adicionar ao Carrinho</button>
+      <div class="carrossel-btns">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <h2>Contato</h2>
+  <form id="formContato">
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu e-mail" required>
+    <textarea placeholder="Mensagem" required></textarea>
+    <button type="submit">Enviar via WhatsApp</button>
+  </form>
+</section>
+
+<div class="carrinho-modal" id="carrinhoModal">
+  <h3>Seu Carrinho</h3>
+  <ul id="listaCarrinho"></ul>
+  <button id="finalizar">Finalizar Compra</button>
+  <button id="fecharCarrinho">Fechar</button>
+</div>
+
+<div class="notificacao" id="notificacao">Produto adicionado!</div>
+
+<footer>
+  <p>© 2025 Doce Girl. Todos os direitos reservados.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

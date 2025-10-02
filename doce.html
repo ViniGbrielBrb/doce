@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doce Lingeries — Doce Girl</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ================= NOSSO TIME ================= */
+.time {
+  padding: 60px 5%;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,107,203,0.05), rgba(155,89,182,0.05));
+}
+
+.time h2 {
+  margin-bottom: 40px;
+  color: var(--roxo);
+  font-size: 2rem;
+}
+
+.time-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.time-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
+  max-width: 280px;
+}
+
+.time-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.time-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.time-card h3 {
+  margin-bottom: 8px;
+  color: var(--roxo);
+  font-size: 1.2rem;
+}
+
+.time-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">Doce Lingeries</div>
+  <div class="menu-toggle">&#9776;</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="colecao.html" class="ativo">Coleção</a></li>
+      <li><a href="doce.html">Doce Lingeries</a></li>
+      <li><a href="contato.html">Contato</a></li>
+    </ul>
+  </nav>
+ 
+</header>
+
+<!-- HERO -->
+<section class="sobre">
+  <div class="sobre-hero">
+    <div class="sobre-hero-text">
+      <h1>Sobre a Doce Girl</h1>
+      <p>Conheça nossa missão, visão e valores</p>
+    </div>
+  </div>
+
+  <h2>Missão, Visão e Valores</h2>
+  <div class="sobre-cards">
+    <div class="sobre-card">
+      <h3>Missão</h3>
+      <p>Entregar produtos de qualidade com carinho.</p>
+    </div>
+    <div class="sobre-card">
+      <h3>Visão</h3>
+      <p>Ser referência em moda feminina no Brasil.</p>
+    </div>
+    <div class="sobre-card">
+      <h3>Valores</h3>
+      <p>Ética, sustentabilidade e satisfação do cliente.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="time">
+  <h2>Nosso Time</h2>
+  <div class="time-cards">
+    <div class="time-card">
+      <img src="time1.jpg" alt="Maria">
+      <h3>Maria</h3>
+      <p>Designer</p>
+    </div>
+    <div class="time-card">
+      <img src="time2.jpg" alt="João">
+      <h3>João</h3>
+      <p>Desenvolvedor</p>
+    </div>
+    <div class="time-card">
+      <img src="time3.jpg" alt="Ana">
+      <h3>Ana</h3>
+      <p>Marketing</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- CARRINHO -->
+<div class="carrinho-modal" id="carrinhoModal">
+  <h3>Seu Carrinho</h3>
+  <ul id="listaCarrinho"></ul>
+  <button id="finalizar">Finalizar Compra</button>
+  <button id="fecharCarrinho">Fechar</button>
+</div>
+
+<div class="notificacao" id="notificacao">Produto adicionado!</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 Doce Girl. Todos os direitos reservados.</p>
+</footer>
+
+<!-- SCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
+
