@@ -236,19 +236,24 @@ nav ul li a:hover {
 /* ================= RESPONSIVO ================= */
 @media(max-width:768px){
   .menu-toggle { display:block; }
-  nav ul {
-    flex-direction: column;
-    max-height:0;
-    width:100%;
-    background:#333;
-    border-radius:8px;
-    overflow:hidden;
+  nav ul { 
+    flex-direction: column; 
+    display: none; 
+    width: 100%; 
+    background: #333; 
+    margin-top: 10px; 
+    border-radius:8px; 
+    padding:10px 0;
   }
-  nav ul.active { max-height:500px; }
+  nav ul.active { display: flex; }
   nav ul li { text-align:center; }
-
-  #btnCarrinho { margin-top:10px; width:100%; align-self:center; }
-
+  
+  #btnCarrinho {
+    margin-top:10px;
+    width:calc(100% - 40px); /* Mantém espaçamento das laterais */
+    align-self:center;
+  }
+  
   .hero {
     padding:60px 20px;
   }
@@ -256,6 +261,7 @@ nav ul li a:hover {
   .hero-text p { font-size:1rem; }
   .hero-text .btn { width:80%; margin:auto; display:block; }
 }
+
 </style>
 </head>
 <body>
@@ -368,7 +374,6 @@ nav ul li a:hover {
   // Menu hamburguer
   const menuToggle = document.querySelector('.menu-toggle');
   const navUl = document.querySelector('nav ul');
-
   menuToggle.addEventListener('click', () => {
     navUl.classList.toggle('active');
   });
@@ -401,7 +406,7 @@ nav ul li a:hover {
     contadorCarrinho.textContent = carrinho.length;
   }
 
-  adicionarBtns.forEach((btn, index) => {
+  adicionarBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const produto = btn.parentElement;
       const nome = produto.querySelector('h3').textContent;
@@ -422,14 +427,12 @@ nav ul li a:hover {
   });
 
   document.getElementById('finalizar').addEventListener('click', ()=> {
-    if(carrinho.length === 0) {
+    if(carrinho.length === 0){
       alert('Seu carrinho está vazio!');
       return;
     }
     let texto = 'Olá, gostaria de comprar:\n';
-    carrinho.forEach(item => {
-      texto += `${item.nome} - R$${item.preco}\n`;
-    });
+    carrinho.forEach(item => { texto += `${item.nome} - R$${item.preco}\n`; });
     window.open(`https://wa.me/5511999999999?text=${encodeURIComponent(texto)}`, '_blank');
   });
 
@@ -446,7 +449,9 @@ nav ul li a:hover {
   });
 </script>
 
+
 </body>
 </html>
+
 
 
